@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Capybara_man69 — Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+      <link rel="icon" href="assets/avatar.png" type="image/png">
+      <link rel="apple-touch-icon" href="assets/avatar.png">
+      <meta name="theme-color" content="#eef9ff">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="card hero">
+        <div class="avatar">
+          <img id="avatar-img" src="assets/avatar.png" alt="avatar">
+          <span class="avatar-fallback">CM</span>
+        </div>
+        <h1>Capybara_man69</h1>
+        <p class="subtitle">Crimson Core - Asistant ● Looking For Work</p>
+        <div class="actions">
+          <a class="btn ghost" id="link-namemc" href="https://namemc.com/profile/CapyBara_Man69.1" target="_blank" rel="noopener noreferrer" data-href="">NameMC</a>
+          <a class="btn ghost" id="link-github" href="https://github.com/Capybaraman69" target="_blank" rel="noopener noreferrer" data-href="">GitHub</a>
+          <a class="btn ghost" id="link-x" href="https://x.com/Capybara_man69" target="_blank" rel="noopener noreferrer" data-href="">X</a>
+          <a class="btn ghost" id="link-spotify" href="https://open.spotify.com/user/31xqtjbh5pyxrt443y5oq3vho35u" target="_blank" rel="noopener noreferrer" data-href="">Spotify</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>ChatReply</h2>
+        </div>
+          <p>ChatReply is a lightweight client-side mod that automatically replies to chat messages and sends scheduled messages.<br>
+          <p></p></p>
+          <a class="btn ghost" id="link-modrinth" href="https://modrinth.com/mod/chatreply" target="_blank" rel="noopener noreferrer" data-href="">Modrinth</a>
+          <a class="btn ghost" id="invite-chatreply" href="https://discord.gg/8sW4fNeX8c" target="_blank" rel="noopener noreferrer" data-href="">Discord Invite</a>
+          <p>  </p>
+          <h3>Discord Widget</h3>
+          <iframe src="https://discord.com/widget?id=1474371255850369116&theme=light" width="350" height="300" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+      </section>
+
+      <section class="card small-card">
+        <h4>About</h4>
+        <p>Hey! I'm Capy. I'm a small developer who works with Minecraft.  </p>
+        <p>I personally like to make mods and plugins, but i also want to take it somewhere. I have a passion for creating and sharing my work with others, and I'm always looking for new opportunities to collaborate and learn.<p>
+      </section>
+
+      <section class="card small-card">
+        <h4>guns.lol</h4>
+        <p class="muted">Also veiw my guns.lol page!</p>
+        <div class="row">
+        <a class="btn ghost" id="guns-lol" href="https://guns.lol/Capybara_man69" target="_blank" rel="noopener noreferrer" data-href="">guns.lol</a>
+        </div>
+      </section>
+
+      <section class="card small-card">
+        <h4>Contact</h4>
+        <p class="muted">Want to reach me? DM me on Discord.</p>
+        <div class="row">
+        <p class="muted">My Discord: Capybara_man69</p>
+        </div>
+      </section>
+
+      <footer class="card footer">Made with html and Python</footer>
+    </main>
+
+    <script>
+      document.addEventListener('click', function (e) {
+        const a = e.target.closest('a[data-href]');
+        if (a) {
+          const href = a.getAttribute('data-href');
+          if (href) {
+            window.location.href = href;
+            e.preventDefault();
+            return;
+          }
+        }
+
+        const btn = e.target.closest('#copy-ip');
+        if (btn) {
+          const ip = btn.getAttribute('data-ip') || '';
+          if (ip && navigator.clipboard) {
+            navigator.clipboard.writeText(ip).then(() => showToast('IP copied to clipboard'))
+              .catch(() => alert('Failed to copy IP to clipboard'));
+          } else if (ip) {
+            window.prompt('Copy server IP', ip);
+          } else {
+            showToast('No IP set yet');
+          }
+        }
+      });
+
+      function showToast(msg) {
+        const t = document.createElement('div');
+        t.textContent = msg;
+        Object.assign(t.style, {
+          position: 'fixed',
+          bottom: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          background: 'rgba(0,0,0,0.65)',
+          color: '#fff',
+          padding: '8px 12px',
+          borderRadius: '8px',
+          zIndex: 9999,
+          fontSize: '13px',
+        });
+        document.body.appendChild(t);
+        setTimeout(() => t.remove(), 1800);
+      }
+      (function(){
+        const img = document.getElementById('avatar-img');
+        const fallback = document.querySelector('.avatar .avatar-fallback');
+        if (!img) return;
+        img.addEventListener('load', () => {
+          if (fallback) fallback.style.display = 'none';
+        });
+        img.addEventListener('error', () => {
+          img.style.display = 'none';
+          if (fallback) fallback.style.display = 'flex';
+        });
+      })();
+    </script>
+
+  </body>
+</html>
